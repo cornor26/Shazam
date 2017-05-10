@@ -38,5 +38,4 @@ end
 % offset).
 [m, i] = max(modes(:, 2));
 bestMatchID = i;
-
 end
