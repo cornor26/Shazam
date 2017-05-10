@@ -22,6 +22,7 @@ y = abs(Y);
 [~,maxf] = max(Y)
 close(prompt);
 
-prompt = msgbox('Looking for Match');
-matchID = match_segment(y,fs,hash_table,length(songTitle))
-close(prompt);
+
+% prompt = msgbox('Looking for Match');
+% matchID = match_segment(y,fs,hash_table,length(songTitle))
+% close(prompt);
