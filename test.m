@@ -1,13 +1,16 @@
 clear all; close all; clc;
 
-songnames = cell(3,1);
-songnames{1} = 'Baba_Oriley.mp3';
-songnames{2} = 'Hooked_on_a_Feeling.mp3';
-songnames{3} = 'Ljones - Mango Kimono.mp3';
-songnames 
+songList = dir('songs');
+numberofSongs = numel(songList)-2;
+songTitle = [];
+for k = 1:numberofSongs
+    information = songList(k+2);
+    songTitle{k} = information.name;
+end
+songTitle = songTitle';
 
 prompt = msgbox('Creating Hash Table');
-hash_table = createHash(200,songnames);
+hash_table = createHash(200,songTitle);
 close(prompt);
 
 prompt = msgbox('Reading Song');
@@ -20,5 +23,5 @@ y = abs(Y);
 close(prompt);
 
 prompt = msgbox('Looking for Match');
-matchID = match_segment(y,fs,hash_table,length(songnames))
+matchID = match_segment(y,fs,hash_table,length(songTitle))
 close(prompt);
