@@ -19,6 +19,9 @@ prompt = msgbox('Looking for Match');
 matchID = match_segment(y,fs,hash_table,numberofSongs)
 close(prompt);
 
+songname = songTitle{matchID};
+prompt = msgbox(songname);
+
 
 
 
